@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Loja Tech SENAI</title>
     <link rel="stylesheet" href="styles/reset.css">
+    <link rel="stylesheet" href="styles/style.css">
 </head>
 <body>
     <!-- Cabeçalho -->
@@ -39,10 +40,41 @@
                         <input type="number" name="" id="quantidade" min="0" step="1" required>
                     </label>
                 </div>
-                
+                <div class="botoes">
+                    <button type="submit" id="btnAdd">Adicionar</button>
+                    <button type="button" id="btnLimpar">Limpar</button>
+                </div>
             </form>
+        </section>
+        <section class="conteudo-formulario">
+            <div class="cabecalho-tabela">
+                <h2>Produtos Cadastrados</h2>
+                <input type="search" name="" id="buscar" placeholder="Buscar nome do produto">
+            </div>
+            <div class="secao-tabela">
+                <table class="tabela">
+                    <thead>
+                        <tr>
+                            <th>Nome</th>
+                            <th>Categoria</th>
+                            <th>Preço</th>
+                            <th>Quantidade</th>
+                            <th>Subtotal</th>
+                            <th>Ações</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+            <div class="resumo">
+                <span>Total de itens: <strong>0</strong></span>
+                <span>Valor total: <strong>0</strong></span>
+            </div>
         </section> 
      </main>
+     <footer class="rodape">
+        <small>&copy; Loja Tech SENAI</small>
+     </footer>
 </body>
 </html>
 
