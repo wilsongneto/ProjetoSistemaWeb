@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loja Tech SENAI</title>
+    <link rel="stylesheet" href="styles/reset.css">
+</head>
+<body>
+    <!-- Cabeçalho -->
+     <header class="cabecalho">
+        <h1>Loja Tech SENAI - Cadastro de Produtos</h1>
+        <button id="btnTema" type="button">Mudar Tema</button>
+    </header>
+
+    <!-- Conteúdo principal -->
+     <main class="conteudo">
+        <!-- Formulário -->
+        <section class="conteudo-formulario">
+            <h2>Novo Produto</h2>
+            <form id="form-produtos">
+                <div class="grade">
+                    <label for="produto">Nome do Produto*
+                        <input type="text" name="" id="produto" required placeholder="Digite o nome do produto aqui...">
+                    </label>
+                    <label>Categoria*
+                        <select id="categoria">
+                            <option value="" selected disabled>Opções</option>
+                            <option value="">Hardware</option>
+                            <option value="">Periféricos</option>
+                            <option value="">Acessórios</option>
+                            <option value="">Outros</option>
+                        </select>
+                    </label>
+                    <label for="preco">Preço(R$)*
+                        <input type="number" name="" id="preco" step="0.01" min="0" placeholder="0.00" required>
+                    </label>
+                    <label for="quantidade">Quantidade* 
+                        <input type="number" name="" id="quantidade" min="0" step="1" required>
+                    </label>
+                </div>
+                
+            </form>
+        </section> 
+     </main>
+</body>
+</html>
+
