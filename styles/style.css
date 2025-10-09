@@ -3,7 +3,7 @@
     --card: #bae4da;
     --text: #e3a8d9;
     --muted: #e7ebaf;
-    --primary: #ddd;
+    --primary: #79eb6a;
     --border: #ada;
 }
 
@@ -38,4 +38,122 @@ h1, h2 {
     padding: 0.75rem;
     border-bottom: 1px solid var(--border);
     background-color: var(--card);
+}
+
+.cabecalho h1 {
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.conteudo-formulario {
+    background-color: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    box-shadow: 0 1px 0 rgba(0, 0, 0, 0.482);
+}
+
+.grade {
+    display: grid;
+    gap: 0.75rem;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
+label {
+    display: flex;
+    flex-direction: column;
+    gap: 0.35;
+    font-size: 0.95rem;
+}
+
+input, select {
+    margin-top: 10px;
+    padding: 0.6rem;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    background: transparent;
+    color: inherit;
+}
+
+input::placeholder {
+    color: var(--muted);
+}
+
+.botoes {
+    display: flex;
+    gap: 0.6rem;
+    margin-top: 0.75rem;
+}
+
+button {
+    padding: 0.5rem 0.7rem;
+    border-radius: 10px;
+    border: 1px solid var(--primary);
+    background-color: var(--bg);
+    color: #210000;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+button.outline {
+    background: transparent;
+    color: #360303;
+}
+
+button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.mensagem {
+    min-height: 1.25rem;
+    color: var(--card);
+    margin: 0.25rem 0 0;
+}
+
+.cabecalho-tabela {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.75;
+}
+
+.secao-tabela {
+    overflow: auto;
+    border: 1px solid #2d2626;
+    border-radius: 10px;
+}
+
+.tabela {
+    width: 100%;
+}
+
+th, td {
+    padding: 0.6rem;
+    border-bottom: 1px solid #160248;
+    text-align: left;
+}
+
+th {
+    background-color: #79eb6a;
+    font-weight: 700;
+}
+
+tr:hover {
+    background-color: #ada;
+}
+
+.resumo {
+    display: flex;
+    gap: 1rem;
+    justify-content: flex-end;
+    padding: 0.5rem 0.2rem;
+    color: #360303;
+}
+
+.rodape {
+    text-align: center;
+    padding: 1rem;
+    color: darkmagenta;
 }
