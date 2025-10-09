@@ -1,25 +1,26 @@
-const form = document.getElementById('');
-const inputNome = document.getElementById('');
-const selectCategoria = document.getElementById('');
-const inputPreco = document.getElementById('');
-const inputQtde = document.getElementById('');
-const tabelaBody = document.querySelector('');
-const busca = document.getElementById('');
-const totalItensEl = document.getElementById('');
-const valorTotalEl = document.getElementById('');
-const msg = document.getElementById('');
-const btnLimparTudo = document.getElementById('');
-const btnTema = document.getElementById('');
+'use strict';
+
+const form = document.getElementById('form-produtos');
+const inputNome = document.getElementById('produto');
+const selectCategoria = document.getElementById('categoria');
+const inputPreco = document.getElementById('preco');
+const inputQtde = document.getElementById('quantidade');
+const tabelaBody = document.querySelector('.tabela tbody');
+const busca = document.getElementById('buscar');
+const totalItensEl = document.getElementById('totalItens');
+const valorTotalEl = document.getElementById('valorTotal');
+const msg = document.getElementById('mensagem');
+const btnLimparTudo = document.getElementById('btnLimpar');
+const btnTema = document.getElementById('btnTema');
 
 
 let produtos = [];
-const STORAGE_KEY = '';
+const STORAGE_KEY = 'loja_tech_senai';
 
 
 function formatarMoeda(n){
   return n.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
 }
-
 
 function salvar(){
   localStorage.setItem(STORAGE_KEY, JSON.stringify(produtos));
@@ -28,7 +29,6 @@ function carregar(){
   const dados = localStorage.getItem(STORAGE_KEY);
   produtos = dados ? JSON.parse(dados) : [];
 }
-
 
 function render(){
   const termo = busca.value.trim().toLowerCase();
@@ -45,25 +45,25 @@ function render(){
 
  
   for(const p of filtrados){
-    const tr = document.createElement('');
+    const tr = document.createElement('tr');
 
-    const tdNome = document.createElement('');
-    tdNome.textContent = p.;
+    const tdNome = document.createElement('td');
+    tdNome.textContent = p.nome;
 
-    const tdCat = document.createElement('');
-    tdCat.textContent = p.;
+    const tdCat = document.createElement('td');
+    tdCat.textContent = p.categoria || '-';
 
-    const tdPreco = document.createElement('');
-    tdPreco.textContent = formatarMoeda(p.);
+    const tdPreco = document.createElement('td');
+    tdPreco.textContent = formatarMoeda(p.preco);
 
-    const tdQtde = document.createElement('');
-    tdQtde.textContent = p.;
+    const tdQtde = document.createElement('td');
+    tdQtde.textContent = p.quantidade;
 
-    const tdSub = document.createElement('');
-    tdSub.textContent = formatarMoeda(p. * p.);
+    const tdSub = document.createElement('td');
+    tdSub.textContent = formatarMoeda(p.preco * p.quantidade);
 
-    const tdAcoes = document.createElement('');
-    const btnRem = document.createElement('');
+    const tdAcoes = document.createElement('td');
+    const btnRem = document.createElement('btnLimpar');
     btnRem.textContent = 'Remover';
     btnRem.className = 'outline';
     btnRem.addEventListener('click', () => removerProduto(p.id));
@@ -73,12 +73,11 @@ function render(){
     tabelaBody.appendChild(tr);
   }
 
- 
   let somaQtde = 0;
   let somaValor = 0;
   for(const p of produtos){
-    somaQtde += p.;
-    somaValor += p. * p.;
+    somaQtde += p.quantidade;
+    somaValor += p.preco * p.quantidade;
   }
   totalItensEl.textContent = somaQtde;
   valorTotalEl.textContent = formatarMoeda(somaValor);
@@ -164,4 +163,3 @@ btnTema.addEventListener('click', () => {
 
 carregar();
 render();
-
